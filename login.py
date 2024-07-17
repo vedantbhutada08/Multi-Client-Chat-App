@@ -60,7 +60,7 @@ def login():
                 username_name = b
                 resp.configure(text=f'Login Successful\n Welcome {b} ', fg='green')
                 log.destroy()
-                f = open('isLog.txt','w')
+                f = open('Log.txt','w')
                 to_write = 'logged in,'+b
                 f.write(to_write)
                 f.close()
@@ -171,7 +171,7 @@ def register():
                 global username_name
                 username_name = name
                 reg.destroy()
-                f = open('isLog.txt','w')
+                f = open('Log.txt','w')
                 to_write = 'logged in,'+username_name
                 f.write(to_write)
                 f.close()
@@ -198,8 +198,3 @@ def register():
 
 
     reg.mainloop()
-
-
-
-##register()
-

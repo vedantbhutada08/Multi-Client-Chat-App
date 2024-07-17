@@ -29,7 +29,7 @@ def account_func(username):
             db.commit()
             c.execute(f'select avatar from log_details where name = "{username}"')
             avar_no = c.fetchone()[0]
-            avatar = PhotoImage(file=f'avatars\\{avar_no}')
+            avatar = PhotoImage(file=f'profile images\\{avar_no}')
             av_button.configure(image=avatar)
             mb.showinfo('success','Avatar Changed.')
             pro.destroy()
@@ -46,32 +46,32 @@ def account_func(username):
 
         Label(av, text='Choose Avatar',bg=bg,font=('Calibri Light',20,'bold'),fg='white').grid(row=0,columnspan=3)
 
-        img_0 = PhotoImage(file='avatars\\0.png')
+        img_0 = PhotoImage(file='profile images\\0.png')
         Button(av,image=img_0,bg=bg,bd=0,command=lambda : set_av(0)).grid(row=1,column=0)
 
-        img_1 = PhotoImage(file='avatars\\1.png')
+        img_1 = PhotoImage(file='profile images\\1.png')
         Button(av,image=img_1,bg=bg,bd=0,command=lambda : set_av(1)).grid(row=1,column=1)
 
-        img_2 = PhotoImage(file='avatars\\2.png')
+        img_2 = PhotoImage(file='profile images\\2.png')
         Button(av,image=img_2,bg=bg,bd=0,command=lambda : set_av(2)).grid(row=1,column=2)
 
-        img_3 = PhotoImage(file='avatars\\3.png')
+        img_3 = PhotoImage(file='profile images\\3.png')
         Button(av,image=img_3,bg=bg,bd=0,command=lambda : set_av(3)).grid(row=2,column=0)
 
-        img_4 = PhotoImage(file='avatars\\4.png')
+        img_4 = PhotoImage(file='profile images\\4.png')
         Button(av,image=img_4,bg=bg,bd=0,command=lambda : set_av(4)).grid(row=2,column=1)
 
-        img_5 = PhotoImage(file='avatars\\5.png')
+        img_5 = PhotoImage(file='profile images\\5.png')
         Button(av,image=img_5,bg=bg,bd=0,command=lambda : set_av(5)).grid(row=2,column=2)
 
-        img_6 = PhotoImage(file='avatars\\6.png')
+        img_6 = PhotoImage(file='profile images\\6.png')
         Button(av,image=img_6,bg=bg,bd=0,command=lambda : set_av(6)).grid(row=3,column=0)
 
-        img_7 = PhotoImage(file='avatars\\7.png')
-        Button(av,image=img_7,bg=bg,bd=0,command=lambda : set_av(7)).grid(row=3,column=1)
+        # img_7 = PhotoImage(file='profile images\\7.png')
+        # Button(av,image=img_7,bg=bg,bd=0,command=lambda : set_av(7)).grid(row=3,column=1)
 
-        img_8 = PhotoImage(file='avatars\\8.png')
-        Button(av,image=img_8,bg=bg,bd=0,command=lambda : set_av(8)).grid(row=3,column=2)
+        # img_8 = PhotoImage(file='profile images\\8.png')
+        # Button(av,image=img_8,bg=bg,bd=0,command=lambda : set_av(8)).grid(row=3,column=2)
 
         av.mainloop()
 
@@ -120,7 +120,7 @@ def account_func(username):
 
     avar_no = c.fetchone()[0]
 
-    avatar = PhotoImage(file=f'avatars\\{avar_no}')
+    avatar = PhotoImage(file=f'profile images\\{avar_no}')
 
     av_button = Button(pro, image=avatar,bg=bg,bd=0,command=change_avatar)
     av_button.place(x=110,y=30)

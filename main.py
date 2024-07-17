@@ -114,7 +114,7 @@ def main_loop(username):
 
 
     def logout_func():
-        f =open('isLog.txt',"w")
+        f =open('Log.txt',"w")
         to_write = 'Logged Off,'
         f.write(to_write)
         f.close()
@@ -128,7 +128,7 @@ def main_loop(username):
 
 
     def about_func():
-        mb.showinfo('About', 'This is an exclusive distribution of DeeChat created By group 14. This application was designed to have group chats. This has features like sending messages, showing all users in database, showing all the active users, working in real-time, responsive, managing account settings, login, logout, register. Hope you like the application. Please share your feedbacks.')
+        mb.showinfo('About', 'This is an exclusive distribution of Chat-app created By group 14. This application was designed to have group chats. This has features like sending messages, showing all users in database, showing all the active users, working in real-time, responsive, managing account settings, login, logout, register. Hope you like the application. Please share your feedbacks.')
 
 
 
@@ -191,13 +191,13 @@ def main_loop(username):
     win = Tk()
     win.geometry('450x487')
     win.resizable(0,0)
-    win.title('DeeChat')
+    win.title('Chat')
 
     Label(win, text='',bg=bg,width=450,font=('arial black',15,'bold'),relief='groove').pack()
-    title_label = Label(win, text='DeeChat',bg=bg,fg='white',font=('arial black',12,'bold'))
+    title_label = Label(win, text='Chat',bg=bg,fg='white',font=('arial black',12,'bold'))
     title_label.place(x=350,y=2)
 
-    menu_img = PhotoImage(file='resources/menu.png')
+    menu_img = PhotoImage(file='icons/menu.png')
     Button(win, image=menu_img,bg=bg,bd=0,command=menu_operate_func).place(x=8,y=7)
 
 
@@ -223,21 +223,21 @@ def main_loop(username):
 
     menu_bg = Label(win, text='',bg=bg,width=15,font=('arial black',15,'bold'),relief='groove',height=16)
     log_bg = Label(win,bg=bg,width=30,height=9,relief='groove')
-    login_img =PhotoImage(file='resources/login.png')
+    login_img =PhotoImage(file='icons/login.png')
     log_img = Label(win,image=login_img,bg=bg)
     log_in_as = Label(win, text='Logged In As : ',bg=bg,font=('',13),fg='white')
     name = Label(win, text=username,bg=bg,font=('',10,'bold'),fg='white')
 ##    if len(username) > 25:
 ##        name['font'] = ('',9,'bold')
-    mail_img = PhotoImage(file='resources/chat-4-24.png')
+    mail_img = PhotoImage(file='icons/chat-4-24.png')
     group_b = Button(win, image=mail_img, bg=bg,bd=0,text=' Group Chat',compound='left',fg='white',font=('arial black',10,'bold'),command=menu_operate_func)
-    mul_mail_img = PhotoImage(file='resources/user-4-24.png')
+    mul_mail_img = PhotoImage(file='icons/user-4-24.png')
     user_l_b = Button(win, image=mul_mail_img, bg=bg,bd=0,text=' User Lists',compound='left',fg='white',font=('arial black',10,'bold'),command=user_l_func)
-    setting_img = PhotoImage(file='resources/camera-settings-icon-white-300x300.png')
+    setting_img = PhotoImage(file='icons/camera-settings-icon-white-300x300.png')
     setting_b = Button(win, image=setting_img, bg=bg,bd=0,text=' Account Settings',compound='left',fg='white',font=('arial black',10,'bold'),command=account_func)
-    about_img = PhotoImage(file='resources/about.png')
+    about_img = PhotoImage(file='icons/about.png')
     about_b = Button(win, image=about_img, bg=bg,bd=0,text=' About',compound='left',fg='white',font=('arial black',10,'bold'),command=about_func)
-    logout_img = PhotoImage(file='resources/logout-24.png')
+    logout_img = PhotoImage(file='icons/logout-24.png')
     logout_b = Button(win, image=logout_img, bg=bg,bd=0,text=' Log Out',compound='left',fg='white',font=('arial black',10,'bold'),command=logout_func)
 
 
@@ -258,7 +258,7 @@ def main_loop(username):
     def on_closing():
         res = mb.askyesnocancel('Exit','Do you want to logout and Exit?')
         if res == True:
-            f =open('isLog.txt',"w")
+            f =open('Log.txt',"w")
             to_write = 'Logged Off,'
             f.write(to_write)
             f.close()
